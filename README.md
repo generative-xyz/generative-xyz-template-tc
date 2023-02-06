@@ -36,4 +36,4 @@ Will build your code into ```/dist``` with ```index.html, index.js, styles.css``
 
 ## NOTICE
 
-**_Current limited size for built all things is only 10kB. Webpack should notice some error if we reach limit of size_**
+**_Current limited size for built all things is only 20kB. Webpack should notice some error if we reach limit of size_**
