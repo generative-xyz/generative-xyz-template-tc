@@ -3,11 +3,11 @@ const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-    mode: 'development',
-    entry: /\.js$/i,
+    entry: "./src/index.js",
     output: {
-        path: path.resolve(__dirname, "./dist"),
-        filename: "bundle.js",
+        path: path.resolve(__dirname, "../dist"),
+        filename: "index.js",
+        clean: true
     },
     module: {
         rules: [
@@ -21,7 +21,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./public/index.html",
             inject: "body",
-            publicPath: "../"
+            publicPath: "./"
         })
     ]
 }

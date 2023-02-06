@@ -5,6 +5,7 @@ const path = require("path")
 const ZipPlugin = require('zip-webpack-plugin');
 
 module.exports = {
+    ...config,
     mode: "production",
     plugins: [
         ...config.plugins,
