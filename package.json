@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "adm-zip": "^0.5.10",
-    "copy-webpack-plugin": "^11.0.0"
+    "copy-webpack-plugin": "^11.0.0",
+    "zip-webpack-plugin": "^4.0.1"
   }
 }
