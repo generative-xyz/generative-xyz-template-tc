@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A simple template on generative.xyz</title>
+
+    <!--
+    *********************************************************************************************************
+    Libraries for your project, script is 100% on-chain, please **** UNCOMMENT **** which you want
+            [
+                "p5js@1.5.0"
+                "threejs@r124"
+                "tonejs@14.8.49"
+                "c2.min.js@1.0.0"
+                "chromajs@2.4.2"
+                "p5.grain.js@0.6.1"
+            ]
+
+        ''' PLEASE contact to team@generative.xyz for submitting more your libs '''
+
+        !!!!!!
+        In case you would use your lib, please add it by yourself, we should store it on-chain when creating project(NOTE: this will effect on gas fee)
+        !!!!!!
+    *********************************************************************************************************
+    -->
+
+    <!-- p5js@1.5.0
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+    -->
+
+    <!-- c2.min.js@1.0.0
+    <script type="text/javascript" src="https://cdn.generative.xyz/ajax/libs/c2/1.0.0/c2.min.js"></script>
+    -->
+
+    <!-- chromajs@2.4.2
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+    -->
+
+    <!-- p5.grain.js@0.6.1
+    <script type="text/javascript" src="https://cdn.generative.xyz/ajax/libs/p5.grain/0.6.1/p5.grain.min.js"></script>
+    -->
+
+    <!-- threejs@r124
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+    -->
+
+    <!-- tonejs@14.8.49
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    -->
+    <script id="snippet-contract-code" type="text/javascript">
+        // not editable
+        const tokenIdRand = (Math.floor(Math.random() * 1000000) + 1) * 1000000 + (Math.floor(Math.random() * 100) + 1);
+        let tokenData = {
+            "tokenId": tokenIdRand,
+            "seed": tokenIdRand.toString(),
+        };
+        // don't edit
+    </script>
+    <script id="snippet-random-code" type="text/javascript">
+        // not editable
+        const urlSeed = new URLSearchParams(window.location.search).get('seed');
+        if (urlSeed && urlSeed.length > 0) {
+            tokenData.seed = urlSeed;
+        }
+        const seed = tokenData.seed
+
+        function cyrb128($) {
+            let _ = 1779033703, u = 3144134277, i = 1013904242, l = 2773480762;
+            for (let n = 0, r; n < $.length; n++) _ = u ^ Math.imul(_ ^ (r = $.charCodeAt(n)), 597399067), u = i ^ Math.imul(u ^ r, 2869860233), i = l ^ Math.imul(i ^ r, 951274213), l = _ ^ Math.imul(l ^ r, 2716044179);
+            return _ = Math.imul(i ^ _ >>> 18, 597399067), u = Math.imul(l ^ u >>> 22, 2869860233), i = Math.imul(_ ^ i >>> 17, 951274213), l = Math.imul(u ^ l >>> 19, 2716044179), [(_ ^ u ^ i ^ l) >>> 0, (u ^ _) >>> 0, (i ^ _) >>> 0, (l ^ _) >>> 0]
+        }
+
+        function sfc32($, _, u, i) {
+            return function () {
+                u >>>= 0, i >>>= 0;
+                var l = ($ >>>= 0) + (_ >>>= 0) | 0;
+                return $ = _ ^ _ >>> 9, _ = u + (u << 3) | 0, u = (u = u << 21 | u >>> 11) + (l = l + (i = i + 1 | 0) | 0) | 0, (l >>> 0) / 4294967296
+            }
+        }
+
+        // a PRNG function that generates deterministic PRN between 0 and 1
+        // use this func as replace for Math.random()
+        // and traits should be derived from this func
+        let mathRand = sfc32(...cyrb128(seed));
+        // don't edit
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
