@@ -2,8 +2,11 @@ const path = require("path")
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
+var glob = require("glob");
+console.log('list script: ', glob.sync("./src/*.js"));
+
 module.exports = {
-    entry: "./src/index.js",
+    entry: glob.sync("./src/*.js"),
     output: {
         path: path.resolve(__dirname, "../dist"),
         filename: "index.js",
