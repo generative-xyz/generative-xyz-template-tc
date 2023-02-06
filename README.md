@@ -11,24 +11,24 @@
                 "p5.grain.js@0.6.1"
             ]
 
-## How to use
+# How to use
 
-# Install
+## Install
 
 ```git clone https://github.com/fxhash/fxhash-webpack-boilerplate.git```
 
-# Structure
+## Structure
 
 - ```public/```  contain index.html and styles.css
 - ```src/``` contain index.js and more
 
-# Start local
+## Start local
 
 ```npm start```
 
 to run on local server http://localhost:3000
 
-# Build
+## Build
 
 ```npm build```
 
