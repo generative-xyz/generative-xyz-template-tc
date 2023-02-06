@@ -17,12 +17,23 @@
 
 ```git clone https://github.com/fxhash/fxhash-webpack-boilerplate.git```
 
+# Structure
+
+- ```public/```  contain index.html and styles.css
+- ```src/``` contain index.js and more
+
 # Start local
 
 ```npm start```
+
+to run on local server http://localhost:3000
 
 # Build
 
 ```npm build```
 
 Will build your code into ```/dist``` with ```index.html, index.js, styles.css``` and zip all to ```project.zip```
+
+## NOTICE
+
+**_Current limited size for built all things is only 10kB. Webpack should notice some error if we reach limit of size_**

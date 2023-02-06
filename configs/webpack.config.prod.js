@@ -22,5 +22,12 @@ module.exports = {
         new ZipPlugin({
             filename: 'project.zip',
         })
-    ]
+    ],
+    performance: {
+        hints: 'error',
+        maxAssetSize: 5000,
+        assetFilter: function (assetFilename) {
+            return assetFilename.endsWith('.js');
+        },
+    },
 }

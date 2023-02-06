@@ -27,13 +27,6 @@ module.exports = {
             publicPath: "./"
         })
     ],
-    performance: {
-        hints: 'error',
-        maxAssetSize: 5000,
-        assetFilter: function (assetFilename) {
-            return assetFilename.endsWith('.js');
-        },
-    },
     optimization: {
     },
 }
