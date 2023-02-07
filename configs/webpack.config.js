@@ -2,11 +2,8 @@ const path = require("path")
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
-var glob = require("glob");
-console.log('list script: ', glob.sync("./src/*.js"));
-
 module.exports = {
-    entry: glob.sync("./src/*.js"),
+    entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "../dist"),
         filename: "[name].index.js",
@@ -29,7 +26,7 @@ module.exports = {
     ],
     optimization: {
         splitChunks: {
-            chunks: "all"
+            chunks: "all",
         }
     },
 }
