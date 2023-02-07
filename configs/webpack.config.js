@@ -6,7 +6,7 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "../dist"),
-        filename: "[name].index.js",
+        filename: "[id].index.js",
         clean: true
     },
     module: {
@@ -27,6 +27,8 @@ module.exports = {
     optimization: {
         splitChunks: {
             chunks: "all",
+            minSize: 2000,
+            maxSize: 7000,
         }
     },
 }
