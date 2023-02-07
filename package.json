@@ -21,6 +21,7 @@
   "homepage": "https://github.com/generative-xyz/generative-xyz-template-webpack#readme",
   "devDependencies": {
     "css-loader": "^6.7.3",
+    "filemanager-webpack-plugin": "^8.0.0",
     "html-webpack-plugin": "^5.4.0",
     "style-loader": "^3.3.1",
     "webpack-cli": "^5.0.1",

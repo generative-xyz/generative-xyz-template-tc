@@ -2,7 +2,7 @@ const config = require("./webpack.config")
 
 const CopyPlugin = require("copy-webpack-plugin")
 const path = require("path")
-const ZipPlugin = require('zip-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = {
     ...config,
@@ -19,8 +19,16 @@ module.exports = {
                 }
             ]
         }),
-        new ZipPlugin({
-            filename: 'project.zip',
+        new FileManagerPlugin({
+            events: {
+                onEnd: {
+                    archive: [
+                        {
+                            source: 'dist', destination: 'dist/project.zip'
+                        }
+                    ]
+                }
+            }
         })
     ],
     performance: {
