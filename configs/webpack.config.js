@@ -9,7 +9,7 @@ module.exports = {
     entry: glob.sync("./src/*.js"),
     output: {
         path: path.resolve(__dirname, "../dist"),
-        filename: "index.js",
+        filename: "[name].index.js",
         clean: true
     },
     module: {
