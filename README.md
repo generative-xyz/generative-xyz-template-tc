@@ -15,7 +15,7 @@
 
 ## Install
 
-```git clone https://github.com/fxhash/fxhash-webpack-boilerplate.git```
+```git clone https://github.com/generative-xyz/generative-xyz-template-webpack.git```
 
 ## Structure
 
