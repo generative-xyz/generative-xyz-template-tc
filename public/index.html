@@ -83,9 +83,12 @@
 
         let seed = window.location.href.split('/').find(t => t.includes('i0'));
 
+    </script>
+    <script id="snippet-random-code" type="text/javascript">
+        // DO NOT EDIT THIS SECTION
         if (seed == null) {
             const alphabet = "0123456789abcdefghijklmnopqrstuvwsyz";
-            seed = (new URLSearchParams(window.location.search).get("seed") || Array(64).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) | 0]).join('')).toUpperCase();
+            seed = new URLSearchParams(window.location.search).get("seed") || Array(64).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) | 0]).join('') + "i0";
         } else {
             let pattern = "seed=";
             for (let i = 0; i < seed.length - pattern.length; ++i) {
@@ -95,9 +98,6 @@
                 }
             }
         }
-    </script>
-    <script id="snippet-random-code" type="text/javascript">
-        // DO NOT EDIT THIS SECTION
 
         function cyrb128($) {
             let _ = 1779033703, u = 3144134277, i = 1013904242, l = 2773480762;
