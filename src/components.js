@@ -1,8 +1,10 @@
 // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Your code here ↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 function components() {
-    const container = document.createElement("div")
-    container.innerHTML = "<span>seed: " + seed + "</span><br>";
-    document.body.prepend(container)
+    const canvas = document.createElement("canvas");
+    document.body.append(canvas)
+    const ctx = canvas.getContext("2d");
+    ctx.font = "11px serif";
+    ctx.fillText(seed, 10, 50);
 }
 
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Your code here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑
