@@ -16,6 +16,10 @@
 
 ```git clone https://github.com/generative-xyz/generative-xyz-template-webpack.git```
 
+```cd path_to_project```
+
+```npm install``` or ```yarn```
+
 ## Structure
 
 - ```public/```  contain index.html and styles.css
@@ -23,13 +27,13 @@
 
 ## Start local
 
-```npm start```
+```npm run start``` or ```yarn start```
 
 to run on local server http://localhost:3000
 
 ## Build
 
-```npm build```
+```npm run build``` or ```yarn build```
 
 Will build your code into ```/dist``` with ```index.html, index.js, styles.css``` and zip all to ```project.zip```
 
