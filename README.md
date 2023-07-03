@@ -5,8 +5,8 @@
 - [x] p5js@1.5.0
 - [x] web3js@1.2.7
 - [ ] threejs@r124
-- [ ] tonejs@14.8.49
-- [ ] c2.min.js@1.0.0
+- [x] tonejs@14.8.49
+- [x] c2.min.js@1.0.0
 - [x] chromajs@2.4.2
 - [x] p5.grain.js@0.6.1
 
