@@ -4,7 +4,7 @@
 
 - [x] p5js@1.5.0
 - [x] web3js@1.2.7
-- [ ] threejs@r124
+- [x] threejs@r124
 - [x] tonejs@14.8.49
 - [x] c2.min.js@1.0.0
 - [x] chromajs@2.4.2
