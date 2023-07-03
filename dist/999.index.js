@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=mathRand();!function(){const e=document.createElement("canvas");document.body.append(e);const t=e.getContext("2d");t.font="11px serif",t.fillText(seed,10,50)}(),window.$generativeTraits={T1:function(e){return e>.5}(e)},console.log(window.$generativeTraits)})();

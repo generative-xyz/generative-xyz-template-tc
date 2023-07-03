@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>A simple template on generative.xyz</title><script sandbox="allow-scripts" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script><script>// ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Add your script for lib here ↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+        //
+        //
+        //
+        // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Add your script for lib here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑</script><script id="snippet-contract-code">// DO NOT EDIT THIS SECTION
+
+        let seed = window.location.href.split('/').find(t => t.includes('i0'));</script><script id="snippet-random-code">// DO NOT EDIT THIS SECTION
+        if (seed == null) {
+            const alphabet = "0123456789abcdefghijklmnopqrstuvwsyz";
+            seed = new URLSearchParams(window.location.search).get("seed") || Array(64).fill(0).map(_ => alphabet[(Math.random() * alphabet.length) | 0]).join('') + "i0";
+        } else {
+            let pattern = "seed=";
+            for (let i = 0; i < seed.length - pattern.length; ++i) {
+                if (seed.substring(i, i + pattern.length) == pattern) {
+                    seed = seed.substring(i + pattern.length);
+                    break;
+                }
+            }
+        }
+
+        function cyrb128($) {
+            let _ = 1779033703, u = 3144134277, i = 1013904242, l = 2773480762;
+            for (let n = 0, r; n < $.length; n++) _ = u ^ Math.imul(_ ^ (r = $.charCodeAt(n)), 597399067), u = i ^ Math.imul(u ^ r, 2869860233), i = l ^ Math.imul(i ^ r, 951274213), l = _ ^ Math.imul(l ^ r, 2716044179);
+            return _ = Math.imul(i ^ _ >>> 18, 597399067), u = Math.imul(l ^ u >>> 22, 2869860233), i = Math.imul(_ ^ i >>> 17, 951274213), l = Math.imul(u ^ l >>> 19, 2716044179), [(_ ^ u ^ i ^ l) >>> 0, (u ^ _) >>> 0, (i ^ _) >>> 0, (l ^ _) >>> 0]
+        }
+
+        function sfc32($, _, u, i) {
+            return function () {
+                u >>>= 0, i >>>= 0;
+                var l = ($ >>>= 0) + (_ >>>= 0) | 0;
+                return $ = _ ^ _ >>> 9, _ = u + (u << 3) | 0, u = (u = u << 21 | u >>> 11) + (l = l + (i = i + 1 | 0) | 0) | 0, (l >>> 0) / 4294967296
+            }
+        }
+
+
+        // IMPORTANT: Instead of Math.random(), use this function mathRand() for random number generation.
+        // This function generates a random number between 0 and 1 with on-chain seed.
+
+        let mathRand = sfc32(...cyrb128(seed));</script><link rel="stylesheet" href="style.css"></head><body><script defer="defer" src="./999.index.js"></script></body></html>
