@@ -1,4 +1,4 @@
-# generative-xyz-template-webpack
+# Launch your art on Bitcoin
 
 ## A simple template for launching your art on Bitcoin
 
